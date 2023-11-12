@@ -2,5 +2,5 @@ node_modules
 .idea
 .env
 *.iml
-*.json
+
 */node_modules
