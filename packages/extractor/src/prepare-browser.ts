@@ -1,6 +1,7 @@
 import axios, {AxiosResponse} from "axios";
 import {parseCookie} from "./cookies";
 import puppeteer from "puppeteer";
+import ora from "ora";
 
 
 async function sendAuthenticationRequest(institutionEmail: string) {
@@ -26,10 +27,12 @@ export async function authenticate(institutionEmail: string) {
 }
 
 export async function getAuthenticatedBrowserAndPage(institutionEmail: string) {
+    const spinner = ora("Authenticating").start()
     const cookie = await authenticate(institutionEmail)
     const browser = await puppeteer.launch({headless: "new"});
     const page = await browser.newPage();
     await page.setCookie(cookie)
+    spinner.succeed("Authenticated")
     return {browser, page}
 }
 

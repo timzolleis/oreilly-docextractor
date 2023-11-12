@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "ES2017",
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "declaration": true
+  },
+  "exclude": [
+    "node_modules",
+    "../../node_modules"
+  ],
+  "files": [
+    "index.ts"
+  ]
+}

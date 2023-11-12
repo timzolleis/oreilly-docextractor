@@ -1,14 +1,11 @@
-import {configDotenv} from "dotenv";
-import {indexPages, mergePdfFiles, saveBookPages} from "./book";
+import {BookExtractor} from "./src/book";
 
-async function index() {
-    configDotenv({
-        path: "../.env"
-    })
-    const bookName = process.env.BOOK_NAME
-    await indexPages(bookName, process.env.BOOK_URL)
-    await saveBookPages(bookName)
-    await mergePdfFiles(bookName)
+type ExtractBookProps = {
+    firstBookUrl: string;
+    bookName: string;
+    outputDirectory: string;
+    institutionEmail: string;
 }
 
-index();
+
+export * from "./src/book"
