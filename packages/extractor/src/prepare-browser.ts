@@ -1,5 +1,5 @@
 import axios, {AxiosResponse} from "axios";
-import {parseCookie} from "./cookies";
+import {parseCookie} from "./cookies.js";
 import puppeteer from "puppeteer";
 import ora from "ora";
 

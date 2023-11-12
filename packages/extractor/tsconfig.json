@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "module": "commonjs",
-    "target": "ES2017",
+    "module": "ESNext",
+    "target": "ES6",
     "sourceMap": true,
-    "moduleResolution": "Node",
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "node",
+    "composite": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules",
     "../../node_modules"
   ],
-  "files": [
-    "index.ts"
+  "include": [
+    "index.ts",
+    "src/**/*"
   ]
 }

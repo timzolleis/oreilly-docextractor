@@ -6,9 +6,12 @@
     "dotenv": "^16.3.1",
     "ora": "^7.0.1",
     "pdf-merger-js": "^4.3.0",
-    "puppeteer": "^21.5.1",
-    "tsx": "^4.1.1"
+    "puppeteer": "^21.5.1"
   },
+  "scripts": {
+    "build": "tsc"
+  },
+  "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": "./dist/index.js"

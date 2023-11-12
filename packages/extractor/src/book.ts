@@ -1,11 +1,10 @@
-import {getAuthenticatedBrowserAndPage} from "./prepare-browser";
+import {getAuthenticatedBrowserAndPage} from "./prepare-browser.js";
 import {Page} from "puppeteer";
 import * as fs from "fs";
 import * as path from "path";
 import * as console from "console";
-import PDFMerger = require("pdf-merger-js");
 import ora from "ora";
-
+import PDFMerger from "pdf-merger-js";
 export class BookExtractor {
     institutionEmail: string;
     bookName: string;

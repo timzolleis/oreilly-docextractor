@@ -1,11 +1,13 @@
+#!/usr/bin/env node
+
 import {
     getBookInput,
     getIfShouldBeLandscapeInput,
     getIfShouldReindexInput,
     getIfShouldSkipPages
-} from "./commands/extractPdf";
+} from "./commands/extractPdf.js";
 import {BookExtractor} from "@packages/extractor"
-import ora from "ora";
+import {Command} from "commander";
 
 async function index() {
     const {bookName, firstBookUrl, outputDirectory, institutionEmail} = await getBookInput();
@@ -36,4 +38,13 @@ async function index() {
     await extractor.mergePages();
 }
 
-index()
+const program = new Command();
+
+
+// The extract command
+program.name("extract")
+    .description("Extract a book from the platform")
+    .action(index)
+
+program.parse()
+

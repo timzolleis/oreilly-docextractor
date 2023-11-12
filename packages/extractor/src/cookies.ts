@@ -1,4 +1,4 @@
-import {Cookie} from "./cookie-class";
+import {Cookie} from "./cookie-class.js";
 
 
 export function parseCookie(cookieString: string) {
